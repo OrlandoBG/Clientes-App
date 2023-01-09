@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/clientes")
@@ -25,6 +26,11 @@ public class ClienteController {
     @ResponseStatus(HttpStatus.CREATED)
     public Cliente salvar( @Valid @RequestBody Cliente cliente){
         return repository.save(cliente);
+    }
+
+    @GetMapping
+    public List<Cliente> obterTodos(){
+        return repository.findAll();
     }
 
     @GetMapping("/{id}")
@@ -54,7 +60,7 @@ public class ClienteController {
             .map(cliente ->{
                    cliente.setNome(clienteAtualizado.getNome());
                    cliente.setCpf(clienteAtualizado.getCpf());
-                   return repository.save(clienteAtualizado);
+                   return repository.save(cliente);
                 })
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
     }
