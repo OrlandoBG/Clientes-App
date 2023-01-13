@@ -14,12 +14,15 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class ClientesFormComponent implements OnInit {
 
   cliente: Cliente;
-  success: boolean = false;
-  errors: string[] = [];
-  id: number | null = null;
+  success: boolean;
+  errors: string[];
+  id: number | null;
 
   constructor( private service: ClientesService, private router: Router, private activatedRoute: ActivatedRoute){
     this.cliente = new Cliente();
+    this.success = false;
+    this.errors = [];
+    this.id= null;
    }
 
   ngOnInit():  void{
