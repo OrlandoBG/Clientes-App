@@ -28,7 +28,7 @@ export class ClientesFormComponent implements OnInit {
       this.id = urlParams['id'];
     });
 
-    if(this.id != null){
+    if(this.id){
       this.service.getClienteById(this.id)
       .subscribe(response => this.cliente = response,
         errorResponse => this.cliente= new Cliente());
