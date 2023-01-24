@@ -6,6 +6,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,16 +16,17 @@ import java.util.stream.Collectors;
 @Data
 public class Usuario{
 
-    @Setter
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Setter
+
     @Column(unique = true, name="email")
+    @NotEmpty(message = "{campo.login.obrigatorio}")
     private String username;
 
-    @Setter
+    @NotEmpty(message = "{campo.senha.obrigatorio}")
     @Column(name = "senha")
     private String password;
 
