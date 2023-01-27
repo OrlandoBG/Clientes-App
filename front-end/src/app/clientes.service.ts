@@ -10,9 +10,9 @@ import { environment } from '../environments/environment';
 export class ClientesService {
 
   apiURL: string = environment.apiURLBase + '/api/clientes';
-
-  constructor( private http: HttpClient) { 
-    
+  token: string;
+  constructor( private http: HttpClient) {
+    this.token = ''; 
   }
 
   salvar(cliente: Cliente): Observable<any>{
@@ -24,6 +24,7 @@ export class ClientesService {
   }
 
   getClientes(): Observable<Cliente[]>{
+    const tokenString = localStorage.getItem('access_token');
     return this.http.get<Cliente[]>(this.apiURL);
   }
 
