@@ -13,17 +13,13 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class ClientesFormComponent implements OnInit {
 
-  cliente: Cliente;
-  success: boolean;
-  errors: string[];
-  id: number | null;
+  cliente: Cliente = new Cliente();;
+  success: boolean = false;
+  errors: string[] = [];
+  id: number | null = null;
+  message: string = "";
 
-  constructor( private service: ClientesService, private router: Router, private activatedRoute: ActivatedRoute){
-    this.cliente = new Cliente();
-    this.success = false;
-    this.errors = [];
-    this.id= null;
-   }
+  constructor( private service: ClientesService, private router: Router, private activatedRoute: ActivatedRoute){}
 
   ngOnInit():  void{
     let params =  this.activatedRoute
@@ -48,6 +44,7 @@ export class ClientesFormComponent implements OnInit {
         .atualizar(this.cliente)
           .subscribe(response =>{
             this.success = true;
+            this.message="";
             this.errors = [];
           }, errorResponse => {
             this.errors = ['Erro ao atualizar o cliente.'];
@@ -56,12 +53,14 @@ export class ClientesFormComponent implements OnInit {
       this.service
         .salvar(this.cliente)
           .subscribe( response =>{
+            this.message="";
             this.errors =[];
             this.success=true;
             this.cliente = response;
           }, errorResponse =>{
             this.success = false;
-            this.errors = errorResponse.error.errors
+            this.message = errorResponse.error.message;
+            this.errors = errorResponse.error.errors;
           });
     }
   }

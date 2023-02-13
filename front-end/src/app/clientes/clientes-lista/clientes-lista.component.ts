@@ -10,17 +10,12 @@ import { Router } from '@angular/router';
 })
 export class ClientesListaComponent {
 
-  clientes: Cliente[];
-  clienteSelecionado: Cliente;
-  mensagemSucesso: string;
-  mensagemErro: string;
+  clientes: Cliente[] = [];
+  clienteSelecionado: Cliente =  new Cliente();
+  mensagemSucesso: string = "";
+  mensagemErro: string = "";
 
-  constructor(private service: ClientesService, private router: Router){
-    this.clientes = [];
-    this.clienteSelecionado =  new Cliente()
-    this.mensagemSucesso = "";
-    this.mensagemErro = "";
-  }
+  constructor(private service: ClientesService, private router: Router){}
 
   ngOnInit(): void{
     this.service.getClientes()

@@ -11,18 +11,13 @@ import { ServicoPrestadoService } from 'src/app/servico-prestado.service';
 })
 export class ServicoPrestadoFormComponent {
 
-  clientes: Cliente[];
-  servico: ServicoPrestado;
-  success: boolean;
-  errors: string[];
+  clientes: Cliente[] = [];
+  servico: ServicoPrestado = new ServicoPrestado();
+  success: boolean = false;
+  errors: string[] = [];
 
   constructor( private clienteService: ClientesService,
-               private service: ServicoPrestadoService){
-    this.clientes=[];           
-    this.servico = new ServicoPrestado();
-    this.success = false;
-    this.errors = [];
-  }
+               private service: ServicoPrestadoService){}
 
   ngOnInit(): void{
     this.clienteService

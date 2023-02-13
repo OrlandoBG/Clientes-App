@@ -7,7 +7,6 @@ import io.github.OrlandoBG.io.github.OrlandoBG.clientes.model.repository.Servico
 import io.github.OrlandoBG.io.github.OrlandoBG.clientes.rest.dto.ServicoPrestadoDTO;
 import io.github.OrlandoBG.io.github.OrlandoBG.clientes.util.BigDecimalConverter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;

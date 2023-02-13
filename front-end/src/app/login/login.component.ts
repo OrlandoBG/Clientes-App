@@ -10,20 +10,14 @@ import { Usuario } from './usuario';
 })
 export class LoginComponent {
 
-  username: string;
-  password: string;
-  cadastrando: boolean;
-  mensagemSucesso: string;
-  errors: String[];
+  username: string = "";
+  password: string = "";
+  cadastrando: boolean = false;
+  mensagemSucesso: string = "";
+  errors: String[] = [];
 
 
-  constructor( private router: Router, private authService: AuthService){
-    this.username = "";
-    this.password = "";
-    this.cadastrando = false;
-    this.mensagemSucesso = ""
-    this.errors = [];
-  }
+  constructor( private router: Router, private authService: AuthService){}
 
   onSubmit(){
     this.authService

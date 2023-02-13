@@ -9,19 +9,13 @@ import { ServicoPrestadoService } from 'src/app/servico-prestado.service';
 })
 export class ServicoPrestadoListaComponent {
 
-  nome: string;
-  mes: number;
-  meses: number[];
-  lista: ServicoPrestadoBusca[];
-  message: string;
+  nome: string = "";
+  mes: number = 0;
+  meses: number[] = [1,2,3,4,5,6,7,8,9,10,11,12];
+  lista: ServicoPrestadoBusca[] = [];
+  message: string = "";
 
-  constructor(private service: ServicoPrestadoService){
-    this.nome = ""
-    this.mes= 0;
-    this.meses = [1,2,3,4,5,6,7,8,9,10,11,12];
-    this.lista = [];
-    this.message=""
-  }
+  constructor(private service: ServicoPrestadoService){}
 
   consultar(){
     this.service.buscar(this.nome, this.mes)

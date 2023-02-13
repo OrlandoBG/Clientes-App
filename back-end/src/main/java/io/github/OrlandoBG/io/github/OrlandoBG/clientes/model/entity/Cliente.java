@@ -24,9 +24,10 @@ public class Cliente {
     @Column(nullable = false, length=150)
     private String nome;
 
+
     @NotNull(message = "{campo.cpf.obrigatorio}")
     @CPF(message = "{campo.cpf.invalido}")
-    @Column(nullable = false, length=11)
+    @Column(nullable = false, length=11, unique = true)
     private String cpf;
 
     @JsonFormat(pattern = "dd/MM/yyyy")

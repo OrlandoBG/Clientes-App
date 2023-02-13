@@ -2,11 +2,10 @@ package io.github.OrlandoBG.io.github.OrlandoBG.clientes.rest;
 
 import io.github.OrlandoBG.io.github.OrlandoBG.clientes.exception.UsuarioCadastradoException;
 import io.github.OrlandoBG.io.github.OrlandoBG.clientes.model.entity.Usuario;
-import io.github.OrlandoBG.io.github.OrlandoBG.clientes.model.repository.UsuarioRepository;
 import io.github.OrlandoBG.io.github.OrlandoBG.clientes.services.UsuarioService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 

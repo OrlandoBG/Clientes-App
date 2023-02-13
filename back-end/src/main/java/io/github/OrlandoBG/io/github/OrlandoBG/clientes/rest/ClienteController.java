@@ -1,11 +1,14 @@
 package io.github.OrlandoBG.io.github.OrlandoBG.clientes.rest;
 
+import io.github.OrlandoBG.io.github.OrlandoBG.clientes.exception.DatabaseException;
 import io.github.OrlandoBG.io.github.OrlandoBG.clientes.model.entity.Cliente;
 import io.github.OrlandoBG.io.github.OrlandoBG.clientes.model.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+
 
 import javax.validation.Valid;
 import java.util.List;
@@ -23,8 +26,15 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Cliente salvar( @Valid @RequestBody Cliente cliente){
-        return repository.save(cliente);
+
+    public Cliente salvar( @Valid @RequestBody Cliente cliente) {
+        Cliente c;
+        try {
+            c = repository.save(cliente);
+        } catch (DataIntegrityViolationException e) {
+            throw new DatabaseException("Cpf já cadastrado");
+        }
+        return c;
     }
 
     @GetMapping

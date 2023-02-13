@@ -11,7 +11,6 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -23,7 +22,7 @@ import java.util.List;
 public class webConfig extends WebSecurityConfigurerAdapter  {
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    private BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
     private UserDetailsService userDetailsService;
