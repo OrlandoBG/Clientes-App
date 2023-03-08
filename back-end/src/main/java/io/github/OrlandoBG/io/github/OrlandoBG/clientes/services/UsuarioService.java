@@ -42,7 +42,7 @@ public class UsuarioService implements UserDetailsService {
             logger.error("Usuario não encontrado: " + username);
             throw new UsernameNotFoundException("Email não encontrado");
         }
-        logger.info("Usuario não encontrado: " + username);
+        logger.info("Usuario encontrado: " + username);
 
         return User
                 .builder()
