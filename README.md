@@ -9,7 +9,7 @@
 
 # Sobre o Projeto
 
-O Cliente-App é um sistema robusto de gerenciamento de clientes e serviços prestados.
+O Clientes-App é um sistema robusto de gerenciamento de clientes e serviços prestados.
 Nele é possível cadastrar novos clientes, atualizar informações existentes, adicionar serviços prestados e acompanhar o histórico de serviço de cada cliente.
 
 # Tecnologias utilizadas
