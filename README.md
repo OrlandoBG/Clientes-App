@@ -15,3 +15,7 @@ Nele é possível cadastrar novos clientes, atualizar informações existentes, 
 # Tecnologias utilizadas
 
 Java, SpringFramework, JPA, PostgreSQL, Oauth2, JWT, Angular, Bootstrap , JQuery, Git e Postman.
+
+# Diagrama de classes
+
+![image](https://github.com/OrlandoBG/Clientes-App/assets/75863232/0f77151e-b8cc-46a5-9479-cac8cb8113cb)
