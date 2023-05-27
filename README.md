@@ -4,6 +4,8 @@
 ![Home](https://github.com/OrlandoBG/Clientes-App/assets/75863232/bb05f217-80b5-471d-9448-8ab3c2386ea4)
 ![Clientes](https://github.com/OrlandoBG/Clientes-App/assets/75863232/5c3edc42-6aec-4489-9887-ebf1857fc14c)
 ![Salvando Cliente](https://github.com/OrlandoBG/Clientes-App/assets/75863232/8e3b8767-8e1d-40d1-bd7c-87d0d938b969)
+![image](https://github.com/OrlandoBG/Clientes-App/assets/75863232/86c60c76-19a1-4c37-800b-0cefa765c0f6)
+![image](https://github.com/OrlandoBG/Clientes-App/assets/75863232/c5638292-a46a-4c47-abd4-80194915ef38)
 ![ServiçoPrestado](https://github.com/OrlandoBG/Clientes-App/assets/75863232/47d1220a-e5ee-4e84-9a45-499c779267ce)
 ![Validacoes](https://github.com/OrlandoBG/Clientes-App/assets/75863232/21f50c5d-f0d1-499b-8668-13f4632e4d3e)
 
